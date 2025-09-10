@@ -628,4 +628,4 @@ function main_loop() {
 
 # Run
 check_pkgs
-main_loop
+main_loop $@
