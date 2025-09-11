@@ -48,7 +48,7 @@ chmod +x "$install_dir/qdl"
 # termux-url-opener
 echo -e "${CYAN}Creating Termux URL Opener shortcut...${NC}"
 set --
-cat > "$shortcut_dir/termux-url-opener" << EOF
+cat > "$shortcut_dir/termux-url-opener" << 'EOF'
 #!/bin/bash
 #tool: quick downloder
 #by RUR999
