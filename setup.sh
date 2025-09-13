@@ -31,7 +31,23 @@ function banner() {
     echo -e "${color}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀ ⠉"
     echo -e "${NC}"
 }
-
+# check storage
+function check_storage() {
+    while true; do
+        clear;banner
+        if [ ! -d "$HOME/storage/shared" ]; then
+           echo -e "\n${RED}Storage permission required...${NC}"
+           termux-setup-storage
+           echo -en "${GREEN}Press enter after allowed permission.${NC}"
+           read -s -n 1 ENTER
+           echo ""
+           continue
+        else
+           break
+        fi
+    done
+}
+check_storage
 clear;banner
 # Check and create directories
 install_dir="/data/data/com.termux/files/usr/bin"
