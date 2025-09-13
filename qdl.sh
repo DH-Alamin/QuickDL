@@ -644,5 +644,6 @@ function main_loop() {
 }
 
 # Run
+check_storage
 check_pkgs
 main_loop $@
