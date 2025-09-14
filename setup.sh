@@ -69,7 +69,7 @@ cat > "$shortcut_dir/termux-url-opener" << 'EOF'
 #tool: quick downloder
 #by RUR999
 #fb: Riyaz Ull Rabby
-qdl "$1"
+bash /data/data/com.termux/files/usr/bin/qdl "$1"
 EOF
 chmod +x "$shortcut_dir/termux-url-opener"
 
@@ -84,7 +84,7 @@ if test -x "$install_dir/qdl"; then
 else
    echo -e "${RED}ERROR: ${BLUE}The 'qdl' command could not be found or not executable. Please check your Termux or try again.${NC}"
 fi
-if grep -q "qdl" "$shortcut_dir/termux-url-opener"; then
+if grep -q "bash /data/data/com.termux/files/usr/bin/qdl" "$shortcut_dir/termux-url-opener"; then
   echo -e "${GREEN}SUCCESS: Termux URL opener shortcut is correctly set up.${NC}"
   echo -e "*${BLUE}You can now use the 'Share' option from apps like YouTube and select Termux to download videos.${NC}"
 else
